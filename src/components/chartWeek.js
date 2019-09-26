@@ -5,7 +5,7 @@ const moment = require('moment');
 
 const fromUnixTime = (unixtime) => {
   let d = moment.unix(unixtime);
-  let j = moment(d._d).format('kk') + 'h00';
+  let j = moment(d._d).format('ddd');
   return j;
 };
 
@@ -18,40 +18,23 @@ let ChartBlock = styled.div`
   overflow-x: auto;
 `
 
-class ChartDay extends React.Component{
+class ChartWeek extends React.Component{
   state = {
     data: [
-      {name: '0h00', uv: null},
-      {name: '1h00', uv: null},
-      {name: '2h00', uv: null},
-      {name: '3h00', uv: null},
-      {name: '4h00', uv: null},
-      {name: '5h00', uv: null},
-      {name: '6h00', uv: null},
-      {name: '7h00', uv: null},
-      {name: '8h00', uv: null},
-      {name: '9h00', uv: null},
-      {name: '10h00', uv: null},
-      {name: '11h00', uv: null},
-      {name: '12h00', uv: null},
-      {name: '13h00', uv: null},
-      {name: '14h00', uv: null},
-      {name: '15h00', uv: null},
-      {name: '16h00', uv: null},
-      {name: '17h00', uv: null},
-      {name: '18h00', uv: null},
-      {name: '19h00', uv: null},
-      {name: '20h00', uv: null},
-      {name: '21h00', uv: null},
-      {name: '22h00', uv: null},
-      {name: '23h00', uv: null}
+      {name: 'Mon', uv: null},
+      {name: 'Tue', uv: null},
+      {name: 'Wed', uv: null},
+      {name: 'Thu', uv: null},
+      {name: 'Fri', uv: null},
+      {name: 'Sat', uv: null},
+      {name: 'Sun', uv: null}
     ],
     dataS: []
   };
 
   componentDidMount() {
     let s = this.props.cur;
-    fetch(`https://min-api.cryptocompare.com/data/v2/histohour?fsym=${s.toUpperCase()}&tsym=USD&limit=23`)
+    fetch(`https://min-api.cryptocompare.com/data/v2/histoday?fsym=${s.toUpperCase()}&tsym=USD&limit=6`)
       .then(res => res.json())
       .then(
         (result) => {
@@ -76,7 +59,7 @@ class ChartDay extends React.Component{
 
     return (
       <ChartBlock>
-        <AreaChart width={2000} height={400} dot={false} data={this.state.data}
+        <AreaChart width={1000} height={400} dot={false} data={this.state.data}
             margin={{top: 25, right: -15, left: 5, bottom: 5}}>
           <XAxis axisLine={false}
             dataKey="name"
@@ -114,4 +97,4 @@ class ChartDay extends React.Component{
   }
 };
 
-export default ChartDay;
+export default ChartWeek;

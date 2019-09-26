@@ -8,9 +8,11 @@ import styled from 'styled-components';
 let CurrencyBlock = styled.div`
   display: flex;
   flex-direction: row;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #454551;
   align-items: space-evenly;
   justify-content: space-between;
-  background-color: #454551;
   border-radius: 10px;
   min-width: 65%;
   color: white;
@@ -104,15 +106,15 @@ export default class InfoLinks extends React.Component{
     let profitCol = (cur) => {
       switch (cur != undefined) {
         case (cur === 'btc'):
-          let z1 = {'color': percent(this.state.btcProfit), 'text-align': 'right'};
+          let z1 = {'color': percent(this.state.btcProfit), textAlign: 'right'};
           return z1;
           break;
         case (cur === 'eth'):
-            let z2 = {'color': percent(this.state.ethProfit), 'text-align': 'right'};
+            let z2 = {'color': percent(this.state.ethProfit), textAlign: 'right'};
             return z2;
             break;
         case (cur === 'xrp'):
-          let z3 = {'color': percent(this.state.xrpProfit), 'text-align': 'right'};
+          let z3 = {'color': percent(this.state.xrpProfit), textAlign: 'right'};
           return z3;
           break;
         
@@ -121,8 +123,12 @@ export default class InfoLinks extends React.Component{
 
     switch (this.props.curName != undefined){
       case (this.props.curName == 'btc'):
+        let d1;
+        if (this.props.active == 'btc'){
+          d1 = {backgroundColor: '#454551'};
+        };
         return (
-          <CurrencyBlock>
+          <CurrencyBlock style={d1}>
             <CurrencyInfo>
               <span className="icon icon-btc"></span>
               <p className="currencyName">BTC</p>
@@ -136,8 +142,12 @@ export default class InfoLinks extends React.Component{
         )
       break;
       case (this.props.curName == 'eth'):
+        let d2;
+        if (this.props.active == 'eth'){
+          d2 = {backgroundColor: '#454551'};
+        };
         return (
-          <CurrencyBlock>
+          <CurrencyBlock style={d2}>
             <CurrencyInfo>
               <span className="icon icon-eth"></span>
               <p className="currencyName">ETH</p>
@@ -151,8 +161,12 @@ export default class InfoLinks extends React.Component{
         )
       break;
       case (this.props.curName == 'xrp'):
+        let d3;
+        if (this.props.active == 'xrp'){
+          d3 = {backgroundColor: '#454551'};
+        };
         return (
-          <CurrencyBlock>
+          <CurrencyBlock style={d3}>
             <CurrencyInfo>
               <span className="icon icon-xrp"></span>
               <p className="currencyName">XRP</p>

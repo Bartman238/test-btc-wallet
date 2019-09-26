@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { AreaChart, Line, XAxis, YAxis, CartesianGrid, Area } from 'recharts';
+import { AreaChart, XAxis, YAxis, CartesianGrid, Area } from 'recharts';
 const moment = require('moment');
 
 const fromUnixTime = (unixtime) => {
   let d = moment.unix(unixtime);
-  let j = moment(d._d).format('kk') + 'h00';
+  let j = moment(d._d).format('DD MMM');
   return j;
 };
 
@@ -18,40 +18,47 @@ let ChartBlock = styled.div`
   overflow-x: auto;
 `
 
-class ChartDay extends React.Component{
+class ChartMouth extends React.Component{
   state = {
     data: [
-      {name: '0h00', uv: null},
-      {name: '1h00', uv: null},
-      {name: '2h00', uv: null},
-      {name: '3h00', uv: null},
-      {name: '4h00', uv: null},
-      {name: '5h00', uv: null},
-      {name: '6h00', uv: null},
-      {name: '7h00', uv: null},
-      {name: '8h00', uv: null},
-      {name: '9h00', uv: null},
-      {name: '10h00', uv: null},
-      {name: '11h00', uv: null},
-      {name: '12h00', uv: null},
-      {name: '13h00', uv: null},
-      {name: '14h00', uv: null},
-      {name: '15h00', uv: null},
-      {name: '16h00', uv: null},
-      {name: '17h00', uv: null},
-      {name: '18h00', uv: null},
-      {name: '19h00', uv: null},
-      {name: '20h00', uv: null},
-      {name: '21h00', uv: null},
-      {name: '22h00', uv: null},
-      {name: '23h00', uv: null}
+      {name: '01', uv: null},
+      {name: '02', uv: null},
+      {name: '03', uv: null},
+      {name: '04', uv: null},
+      {name: '05', uv: null},
+      {name: '06', uv: null},
+      {name: '07', uv: null},
+      {name: '08', uv: null},
+      {name: '09', uv: null},
+      {name: '10', uv: null},
+      {name: '11', uv: null},
+      {name: '12', uv: null},
+      {name: '13', uv: null},
+      {name: '14', uv: null},
+      {name: '15', uv: null},
+      {name: '16', uv: null},
+      {name: '17', uv: null},
+      {name: '18', uv: null},
+      {name: '19', uv: null},
+      {name: '20', uv: null},
+      {name: '21', uv: null},
+      {name: '22', uv: null},
+      {name: '23', uv: null},
+      {name: '24', uv: null},
+      {name: '25', uv: null},
+      {name: '26', uv: null},
+      {name: '27', uv: null},
+      {name: '28', uv: null},
+      {name: '29', uv: null},
+      {name: '30', uv: null},
+      {name: '31', uv: null}
     ],
     dataS: []
   };
 
   componentDidMount() {
     let s = this.props.cur;
-    fetch(`https://min-api.cryptocompare.com/data/v2/histohour?fsym=${s.toUpperCase()}&tsym=USD&limit=23`)
+    fetch(`https://min-api.cryptocompare.com/data/v2/histoday?fsym=${s.toUpperCase()}&tsym=USD&limit=29`)
       .then(res => res.json())
       .then(
         (result) => {
@@ -114,4 +121,4 @@ class ChartDay extends React.Component{
   }
 };
 
-export default ChartDay;
+export default ChartMouth;

@@ -105,7 +105,7 @@ export default class extends React.Component {
         return '#0ddb86';
       } else { return '#ff7976'; };
     };
-    let profitOrLoss = {'color': percent(profit), 'text-align': 'right'};
+    let profitOrLoss = {'color': percent(profit), textAlign: 'right'};
     return (
       <CurrencyBlock>
         <CurrencyBalance>

@@ -22,10 +22,10 @@ let App = styled.div`
 let LinkStyle = {
   'width': '100%',
   'display': 'flex',
-  'flex-direction': 'column',
-  'align-items': 'center',
-  'justify-content': 'space-between',
-  'text-decoration': 'none'
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  textDecoration: 'none'
 }
 
 export default class MainPage extends React.Component{

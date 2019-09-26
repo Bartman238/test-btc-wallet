@@ -20,11 +20,11 @@ let BtnReturnStyle = styled.i`
 
 let linkStyled = {
   'display': 'flex',
-  'text-decoration': 'none',
+  textDecoration: 'none',
   'width': '50px',
   'height': '50px',
-  'margin-top': '15px',
-  'margin-bottom': '20px'
+  marginTop: '15px',
+  marginBottom: '20px'
 }
 
 export default function BtnReturn() {

@@ -103,15 +103,15 @@ export default class InfoPageBig extends React.Component{
     let profitCol = (cur) => {
       switch (cur != undefined) {
         case (cur === 'btc'):
-          let z1 = {'color': percent(this.state.btcProfit), 'text-align': 'right'};
+          let z1 = {'color': percent(this.state.btcProfit), textAlign: 'right'};
           return z1;
           break;
         case (cur === 'eth'):
-            let z2 = {'color': percent(this.state.ethProfit), 'text-align': 'right'};
+            let z2 = {'color': percent(this.state.ethProfit), textAlign: 'right'};
             return z2;
             break;
         case (cur === 'xrp'):
-          let z3 = {'color': percent(this.state.xrpProfit), 'text-align': 'right'};
+          let z3 = {'color': percent(this.state.xrpProfit), textAlign: 'right'};
           return z3;
           break;
         

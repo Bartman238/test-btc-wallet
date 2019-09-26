@@ -4,6 +4,7 @@ import {store} from '../app.js'
 
 let CurrencyBlock = styled.div`
   background-color: #454551;
+  opacity: 0.9;
   border-radius: 10px;
   width: 95%;
   color: white;

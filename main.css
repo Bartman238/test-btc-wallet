@@ -1,9 +1,24 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400&display=swap');
 
+@media screen and (orientation:portrait){
+  html {
+    height: 100%;
+    background: rgb(67,69,82);
+    background: linear-gradient(180deg, rgba(67,69,82,1) 0%, rgba(45,45,57,1) 43%, rgba(32,32,44,1) 100%) no-repeat;
+  }
+}
+
+@media screen and (orientation:landscape) {
+  html {
+    height: auto;
+    background: rgb(67,69,82);
+    background: linear-gradient(180deg, rgba(67,69,82,1) 0%, rgba(45,45,57,1) 43%, rgba(32,32,44,1) 100%) no-repeat;
+  }
+}
+
+
 body {
-  background-color: #3d3f4c;
-  /* background-image: linear-gradient( 179.2deg,  rgba(61,63,76,0.86) -11.1%, rgba(61,63,76,1) 122.3% ); */
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;  
 }
 
 /* #app {

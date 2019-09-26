@@ -3,6 +3,8 @@ import {Provider} from 'react-redux';
 import {store} from '../app.js';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import {updateBalance} from '../actions/action.js';
+import BtnSearch from '../components/btnSearch.js';
+import BtnNotify from '../components/btnNotify.js';
 import styled from 'styled-components';
 import Wallet from '../components/wallet.js';
 import BtcCurrency from '../components/btcCurrency.js';
@@ -13,10 +15,10 @@ import { btcInfoPage } from './pages.js'
 
 
 let App = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+  // justify-content: space-between;
 `
 
 let LinkStyle = {
@@ -27,6 +29,16 @@ let LinkStyle = {
   justifyContent: 'space-between',
   textDecoration: 'none'
 }
+
+let BtnsLine = styled.span`
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`
 
 export default class MainPage extends React.Component{
   state = {
@@ -63,6 +75,10 @@ export default class MainPage extends React.Component{
     
     return (
       <App>
+        <BtnsLine>
+          <BtnSearch/>
+          <BtnNotify/>
+        </BtnsLine>
         <Wallet/>
         <br></br>
         <Link style={LinkStyle} to='/btcInfo'> <BtcCurrency btc={this.state.btc} btcProfitPrc={this.state.btcProfitPrc} /> </Link>

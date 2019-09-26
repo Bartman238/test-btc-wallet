@@ -11,6 +11,7 @@ let CurrencyBlock = styled.div`
   border-style: solid;
   border-width: 2px;
   border-color: #454551;
+  opacity: 0.9;
   align-items: space-evenly;
   justify-content: space-between;
   border-radius: 10px;

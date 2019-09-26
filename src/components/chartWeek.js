@@ -27,14 +27,15 @@ class ChartWeek extends React.Component{
       {name: 'Thu', uv: null},
       {name: 'Fri', uv: null},
       {name: 'Sat', uv: null},
-      {name: 'Sun', uv: null}
+      {name: 'Sun', uv: null},
+      {name: 'test', uv: null}
     ],
     dataS: []
   };
 
   componentDidMount() {
     let s = this.props.cur;
-    fetch(`https://min-api.cryptocompare.com/data/v2/histoday?fsym=${s.toUpperCase()}&tsym=USD&limit=6`)
+    fetch(`https://min-api.cryptocompare.com/data/v2/histoday?fsym=${s.toUpperCase()}&tsym=USD&limit=7`)
       .then(res => res.json())
       .then(
         (result) => {
@@ -87,10 +88,10 @@ class ChartWeek extends React.Component{
           <Area
             type={"linear"}
             dataKey="uv"
-            stroke="#8884d8"
-            stopOpacity={0.7}
+            stroke="#a073ff"
+            fillOpacity={0.2}
             offset='80%'
-            fill='#8884d8'/>
+            fill='#a073ff'/>
         </AreaChart>
       </ChartBlock>
     );

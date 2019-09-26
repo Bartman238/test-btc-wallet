@@ -4,24 +4,23 @@ import {store} from '../app.js'
 
 
 let WalletBlock = styled.div`
-  padding-top: 35px;  
   text-align: center;
 `
-let BalanceValue = styled.p`
-  margin-top: 5px;
+let BalanceValue = styled.div`
+  margin-top: 0px;
   margin-bottom: 0px;
   color: grey;
   span {
     color: white;
+    i {
+      vertical-align: 100%;
+    }
   }
   .balance {
     padding-left:5px;
     font-size: 40px;
   }
-  i {
-    padding-top: 10px;
-    float: left;
-  }
+  
 `
 
 
@@ -59,6 +58,7 @@ export default class extends React.Component{
       <WalletBlock> 
         <BalanceValue>Your total balance</BalanceValue>
         <BalanceValue><span><i className="fas fa-dollar-sign"></i></span><span className='balance'>{parseFloat(this.state.cash).toFixed(2)}</span></BalanceValue>
+        <br></br>
         <BalanceValue>24h Changes</BalanceValue>
         <BalanceValue style={profitOrLoss}> {s.toFixed(2)}$ </BalanceValue>
       </WalletBlock>

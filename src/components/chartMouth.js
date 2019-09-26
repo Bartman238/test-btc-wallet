@@ -111,10 +111,10 @@ class ChartMouth extends React.Component{
           <Area
             type={"linear"}
             dataKey="uv"
-            stroke="#8884d8"
-            stopOpacity={0.7}
+            stroke="#a073ff"
+            fillOpacity={0.2}
             offset='80%'
-            fill='#8884d8'/>
+            fill='#a073ff'/>
         </AreaChart>
       </ChartBlock>
     );

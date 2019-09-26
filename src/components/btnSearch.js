@@ -3,13 +3,15 @@ import styled from 'styled-components';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import {Link} from 'react-router-dom';
 
-let BtnReturnStyle = styled.i`
+let BtnSearchStyle = styled.i`
+  // margin-left: 10px;
+  // float: left;
   color: white;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   margin-top: 10px;
   border-radius: 100%;
-  font-size: 30px;
+  font-size: 20px;
   i {
     margin: 10px;
   }
@@ -21,16 +23,14 @@ let BtnReturnStyle = styled.i`
 let linkStyled = {
   'display': 'flex',
   textDecoration: 'none',
-  'width': '50px',
-  'height': '50px',
-  marginTop: '15px',
-  marginBottom: '20px'
+  'width': '40px',
+  'height': '40px',
+  // marginTop: '15px',
+  // marginBottom: '20px'
 }
 
-export default function BtnReturn() {
+export default function BtnSearch() {
   return (
-    <div>
-      <Link to='/' style={linkStyled}> <BtnReturnStyle> <i className="fas fa-arrow-left"></i> </BtnReturnStyle> </Link>
-    </div>
+      <Link to='/' style={linkStyled}> <BtnSearchStyle> <i className="fas fa-search"></i> </BtnSearchStyle> </Link>
   );
 }
